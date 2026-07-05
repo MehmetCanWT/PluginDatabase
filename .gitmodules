@@ -76,3 +76,6 @@
 [submodule "plugins/steam-currency-converter"]
 	path = plugins/steam-currency-converter
 	url = https://github.com/MehmetCanWT/steam-currency-converter.git
+[submodule "plugins/steam-proton-rank"]
+	path = plugins/steam-proton-rank
+	url = https://github.com/MehmetCanWT/Steam-Proton-Rank.git
