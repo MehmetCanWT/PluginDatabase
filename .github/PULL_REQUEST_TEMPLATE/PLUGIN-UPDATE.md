@@ -33,8 +33,8 @@ REPLACE_WITH_UPDATE_SUMMARY
 
 ### Backend Configuration
 
-- **Yes/No**: I use a standard Millennium python backend in my plugin.
-- **Yes/No**: I use **custom binaries** that or rely on other FOSS projects that aren't written directly using Millennium's python backend.
+- [ ] I use a standard Millennium Lua backend in my plugin.
+- [ ] I use **custom binaries** that or rely on other FOSS projects that aren't written directly using Millennium's Lua backend.
 
 ### Community Contribution
 

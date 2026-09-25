@@ -97,14 +97,6 @@ export default definePlugin(() => {
 - Custom CSS for genuinely novel UI that has no Steam equivalent.
 - Plugins that don't have user-facing settings don't need a settings panel.
 
-### Backend Language Policy
-
-Python backends are no longer accepted. All plugins must use Lua for their backend (`"backendType": "lua"` in `plugin.json`).
-
-- Reject any plugin with `"backendType": "python"` or that ships `.py` files as part of the plugin backend.
-- Python helper scripts used only for development (build scripts, code generation, tooling) are acceptable and should NOT be flagged -- these are not shipped with the plugin.
-- If a PR updates an existing plugin that currently uses Python, it must migrate to Lua. Do not approve Python backend additions or modifications.
-
 ### General Quality
 
 - Check that the plugin does what its description claims.
