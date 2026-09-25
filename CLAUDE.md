@@ -62,17 +62,19 @@ Clearly label these as **Breaking Change** in your review.
 Plugins must use the component library from `@steambrew/client` and Steam's built-in components. Review settings panels and UI for compliance:
 
 **Settings panels** are defined in `definePlugin()`'s return object via the `content` prop (in the plugin's `index.tsx`):
+
 ```tsx
 export default definePlugin(() => {
-  return {
-    title: "Plugin Name",
-    icon: <IconsModule.Something />,
-    content: <SettingsPanel />,
-  };
+	return {
+		title: "Plugin Name",
+		icon: <IconsModule.Something />,
+		content: <SettingsPanel />,
+	};
 });
 ```
 
 **Required component usage:**
+
 - Use `Field` for settings rows (with `label`, `description`, and `bottomSeparator` props).
 - Use `Toggle`, `TextField`, `Dropdown`, `Slider` for input controls inside `Field`.
 - Use `DialogButton` or `Button` for actions.
@@ -82,6 +84,7 @@ export default definePlugin(() => {
 - Use `Spinner` for loading states.
 
 **Flag these anti-patterns:**
+
 - Raw HTML elements (`<input>`, `<select>`, `<button>`, `<table>`) used where a `@steambrew/client` or Steam component exists.
 - Direct DOM manipulation (`document.createElement`, `element.innerHTML`, `element.appendChild`) for UI that could be React components.
 - Inline `style` attributes or `<style>` tags for layout/styling that Steam's existing CSS classes handle. Custom styles are acceptable only when Steam provides no equivalent.
@@ -89,6 +92,7 @@ export default definePlugin(() => {
 - Building settings UI outside of the `definePlugin` `content` pattern without good reason.
 
 **Acceptable exceptions:**
+
 - DOM manipulation for injecting into parts of Steam's UI that aren't exposed via React (e.g., patching existing Steam pages via `Millennium.findElement`).
 - Custom CSS for genuinely novel UI that has no Steam equivalent.
 - Plugins that don't have user-facing settings don't need a settings panel.
